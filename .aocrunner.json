@@ -5,27 +5,27 @@
   "days": [
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "55712",
         "attempts": [],
-        "time": 1.9708
+        "time": 1.1473
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "55413",
         "attempts": [],
-        "time": 5.5469
+        "time": 4.1696
       }
     },
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "2810",
         "attempts": [],
         "time": 1.5295
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "69110",
         "attempts": [],
         "time": 2.0589
@@ -33,7 +33,7 @@
     },
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "520135",
         "attempts": [],
         "time": 2.0645
@@ -47,13 +47,13 @@
     },
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "27454",
         "attempts": [],
         "time": 2.1684
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "6857330",
         "attempts": [],
         "time": 2.2269
@@ -61,13 +61,13 @@
     },
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "177942185",
         "attempts": [],
         "time": 0.7037
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "69841803",
         "attempts": [],
         "time": 61368.5554
@@ -81,7 +81,7 @@
         "time": 0.1014
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "43364472",
         "attempts": [],
         "time": 1532.2192
@@ -89,13 +89,13 @@
     },
     {
       "part1": {
-        "solved": false,
+        "solved": true,
         "result": "253910319",
         "attempts": [],
         "time": 11.0056
       },
       "part2": {
-        "solved": false,
+        "solved": true,
         "result": "254083736",
         "attempts": [],
         "time": 9.5758
