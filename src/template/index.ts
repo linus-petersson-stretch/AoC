@@ -15,6 +15,7 @@ const part2 = (rawInput: string) => {
 }
 
 run({
+  onlyTests: true,
   part1: {
     tests: [
       // {
@@ -34,5 +35,4 @@ run({
     solution: part2,
   },
   trimTestInputs: true,
-  onlyTests: false,
 })

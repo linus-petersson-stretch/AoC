@@ -14,8 +14,8 @@ const part1 = (rawInput: string) => {
     }
   }
 
-  emptyRows.forEach((i, idx) => {
-    rows.splice(i + idx, 0, [...rows[i + idx]])
+  emptyRows.forEach((emptyIndex, idx) => {
+    rows.splice(emptyIndex + idx, 0, [...rows[emptyIndex + idx]])
   })
 
   let emptyCols: number[] = []
@@ -26,24 +26,23 @@ const part1 = (rawInput: string) => {
     }
   }
 
-  for (let t = 0; t < rows.length; t++) {
-    let row = rows[t]
-    for (let x = 0; x < emptyCols.length; x++) {
-      row.splice(emptyCols[x] + x, 0, ".")
-    }
-  }
+  emptyCols.forEach((emptyIndex, idx) => {
+    rows.forEach((row) => row.splice(emptyIndex + idx, 0, "."))
+  })
 
   const galaxies = new Map()
   let iter = 1
-  for (let r = 0; r < rows.length; r++) {
-    for (let c = 0; c < rows[0].length; c++) {
-      if (rows[r][c] === "#") {
+
+  rows.forEach((row, r) => {
+    row.forEach((cell, c) => {
+      if (cell === "#") {
         galaxies.set(iter, [r, c])
         iter++
       }
-    }
-  }
-  let galaxyNumbers: number[] = [...galaxies.keys()]
+    })
+  })
+
+  let galaxyNumbers = [...galaxies.keys()]
 
   let pairs = galaxyNumbers
     .map((v, i) => galaxyNumbers.slice(i + 1).map((w) => [v, w]))
@@ -84,15 +83,17 @@ const part2 = (rawInput: string) => {
 
   const galaxies = new Map()
   let iter = 1
-  for (let r = 0; r < rows.length; r++) {
-    for (let c = 0; c < rows[0].length; c++) {
-      if (rows[r][c] === "#") {
+
+  rows.forEach((row, r) => {
+    row.forEach((cell, c) => {
+      if (cell === "#") {
         galaxies.set(iter, [r, c])
         iter++
       }
-    }
-  }
-  let galaxyNumbers: number[] = [...galaxies.keys()]
+    })
+  })
+
+  const galaxyNumbers: number[] = [...galaxies.keys()]
 
   let pairs = galaxyNumbers
     .map((v, i) => galaxyNumbers.slice(i + 1).map((w) => [v, w]))
