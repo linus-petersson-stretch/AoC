@@ -6,7 +6,7 @@
     "declaration": true,
     "outDir": "./dist",
     "preserveConstEnums": true,
-    "strict": false,
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,

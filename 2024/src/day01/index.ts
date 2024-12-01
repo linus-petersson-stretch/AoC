@@ -1,18 +1,12 @@
 import run from "aocrunner"
-
-const parseInput = (rawInput: string) => rawInput
+import { column, parseNumberMatrix, print, valueAt } from "../utils/matrix.js"
+import { Direction, move, position } from "../utils/position.js"
 
 const part1 = (rawInput: string) => {
-  const input = parseInput(rawInput).split("\n")
+  const matrix = parseNumberMatrix(rawInput, "   ")
 
-  const firstCol = []
-  const secondCol = []
-
-  input.forEach((line) => {
-    const [first, second] = line.split("   ").map((n) => parseInt(n))
-    firstCol.push(first)
-    secondCol.push(second)
-  })
+  const firstCol = column(matrix, 0)
+  const secondCol = column(matrix, 1)
 
   firstCol.sort()
   secondCol.sort()
@@ -28,16 +22,10 @@ const part1 = (rawInput: string) => {
 
 
 const part2 = (rawInput: string) => {
-  const input = parseInput(rawInput).split("\n")
+  const matrix = parseNumberMatrix(rawInput, "   ")
 
-  const firstCol = []
-  const secondCol = []
-
-  input.forEach((line) => {
-    const [first, second] = line.split("   ").map((n) => parseInt(n))
-    firstCol.push(first)
-    secondCol.push(second)
-  })
+  const firstCol = column(matrix, 0)
+  const secondCol = column(matrix, 1)
 
   const similarities = firstCol.map((a)=> secondCol.filter((b) => a === b).length * a)
 
