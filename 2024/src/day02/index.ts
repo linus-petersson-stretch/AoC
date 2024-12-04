@@ -72,13 +72,12 @@ const part2 = (rawInput: string) => {
 
   const safeRows = rows.map((row) => {
     let safe = false
-    const orgRow = [...row]
 
     for (let i = 0; i < row.length; i++) {
       if (isSafe(row)) {
         safe = true
         break
-      } else if (isSafe([...orgRow.slice(0, i), ...orgRow.slice(i + 1)])) {
+      } else if (isSafe([...row.slice(0, i), ...row.slice(i + 1)])) {
         safe = true
         break
       }
