@@ -37,9 +37,9 @@ const part1 = (rawInput: string) => {
   const a = allX.map((x) => {
     const hasMas = allDirections.map((dir) => {
       return (
-        matrix.valueAtDirection(x, dir) === "M" &&
-        matrix.valueAtDirection(move(x, dir), dir) === "A" &&
-        matrix.valueAtDirection(move(x, dir, 2), dir) === "S"
+        matrix.valueAt(x.move(dir)) === "M" &&
+        matrix.valueAt(x.move(dir, 2)) === "A" &&
+        matrix.valueAt(x.move(dir, 3)) === "S"
       )
     })
 

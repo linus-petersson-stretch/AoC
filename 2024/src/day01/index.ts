@@ -1,6 +1,5 @@
 import run from "aocrunner"
-import { column, parseNumberMatrix, print, valueAt } from "../utils/matrix.js"
-import { Direction, move, position } from "../utils/position.js"
+import { column, parseNumberMatrix } from "../utils/matrix.js"
 
 const part1 = (rawInput: string) => {
   const matrix = parseNumberMatrix(rawInput, "   ")
@@ -20,14 +19,15 @@ const part1 = (rawInput: string) => {
   return diffs.reduce((acc, curr) => acc + curr, 0)
 }
 
-
 const part2 = (rawInput: string) => {
   const matrix = parseNumberMatrix(rawInput, "   ")
 
   const firstCol = column(matrix, 0)
   const secondCol = column(matrix, 1)
 
-  const similarities = firstCol.map((a)=> secondCol.filter((b) => a === b).length * a)
+  const similarities = firstCol.map(
+    (a) => secondCol.filter((b) => a === b).length * a,
+  )
 
   return similarities.reduce((acc, curr) => acc + curr, 0)
 }

@@ -3,6 +3,7 @@ import {
   Direction,
   DirectionAdvanced,
   move,
+  IPosition,
   Position,
 } from "./position.js"
 
@@ -27,7 +28,7 @@ export const row = <T>(matrix: T[][], row: number) => {
   return matrix[row]
 }
 
-export const valueAt = <T>(matrix: T[][], position: Position) => {
+export const valueAt = <T>(matrix: T[][], position: IPosition) => {
   return matrix[position.y]?.[position.x]
 }
 
@@ -39,7 +40,7 @@ export const find = <T>(matrix: T[][], value: T) => {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
       if (matrix[y][x] === value) {
-        return { x, y }
+        return Position.from({ x, y })
       }
     }
   }
@@ -48,7 +49,7 @@ export const find = <T>(matrix: T[][], value: T) => {
 export const findInRow = <T>(matrix: T[][], row: number, value: T) => {
   for (let x = 0; x < matrix[row].length; x++) {
     if (matrix[row][x] === value) {
-      return { x, y: row }
+      return Position.from({ x, y: row })
     }
   }
 }
@@ -56,7 +57,7 @@ export const findInRow = <T>(matrix: T[][], row: number, value: T) => {
 export const findInColumn = <T>(matrix: T[][], column: number, value: T) => {
   for (let y = 0; y < matrix.length; y++) {
     if (matrix[y][column] === value) {
-      return { x: column, y }
+      return Position.from({ x: column, y })
     }
   }
 }
@@ -65,7 +66,7 @@ export const findBy = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
       if (predicate(matrix[y][x])) {
-        return { x, y }
+        return new Position(x, y)
       }
     }
   }
@@ -76,16 +77,20 @@ export const findAll = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
       if (predicate(matrix[y][x])) {
-        results.push({ x, y })
+        results.push(new Position(x, y))
       }
     }
   }
   return results
 }
 
+export const contains = <T>(matrix: T[][], pos: Position) => {
+  return matrix[pos.y]?.[pos.x] != null
+}
+
 export const valueAtDirection = <T>(
   matrix: T[][],
-  pos: Position,
+  pos: IPosition,
   dir: DirectionAdvanced,
 ) => {
   switch (dir) {
@@ -123,7 +128,7 @@ class Matrix<T> {
     return row(this.matrix, r)
   }
 
-  valueAt(pos: Position) {
+  valueAt(pos: IPosition) {
     return valueAt(this.matrix, pos)
   }
 
@@ -151,8 +156,12 @@ class Matrix<T> {
     return findAll(this.matrix, predicate)
   }
 
-  valueAtDirection(pos: Position, dir: DirectionAdvanced) {
+  valueAtDirection(pos: IPosition, dir: DirectionAdvanced) {
     return valueAtDirection(this.matrix, pos, dir)
+  }
+
+  contains(pos: Position) {
+    return contains(this.matrix, pos)
   }
 }
 
