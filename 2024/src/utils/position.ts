@@ -70,6 +70,10 @@ export class Position {
   equals(pos: IPosition) {
     return this.x === pos.x && this.y === pos.y
   }
+
+  key() {
+    return this.toString()
+  }
 }
 
 export const turnRight = (dir: Direction) => {

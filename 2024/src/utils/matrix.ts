@@ -62,26 +62,44 @@ export const findInColumn = <T>(matrix: T[][], column: number, value: T) => {
   }
 }
 
-export const findBy = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
+export const findBy = <T>(
+  matrix: T[][],
+  predicate: (value: T) => boolean | T,
+) => {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
-      if (predicate(matrix[y][x])) {
+      if (predicate(matrix[y][x]) || predicate === matrix[y][x]) {
         return new Position(x, y)
       }
     }
   }
 }
-
-export const findAll = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
+export function findAll<T>(matrix: T[][], value: T): Position[]
+export function findAll<T>(
+  matrix: T[][],
+  predicate: (value: T) => boolean,
+): Position[] {
   const results = []
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
-      if (predicate(matrix[y][x])) {
+      if (
+        predicate === matrix[y][x] ||
+        (typeof predicate === "function" && predicate(matrix[y][x]))
+      ) {
         results.push(new Position(x, y))
       }
     }
   }
   return results
+}
+
+export const adjacent = (matrix: any[][], pos: IPosition) => {
+  return [
+    move(pos, Direction.North),
+    move(pos, Direction.South),
+    move(pos, Direction.East),
+    move(pos, Direction.West),
+  ].filter((p) => contains(matrix, p))
 }
 
 export const contains = <T>(matrix: T[][], pos: Position) => {
@@ -152,7 +170,7 @@ class Matrix<T> {
     return findBy(this.matrix, predicate)
   }
 
-  findAll(predicate: (value: T) => boolean) {
+  findAll(predicate: T | ((value: T) => boolean)) {
     return findAll(this.matrix, predicate)
   }
 
@@ -162,6 +180,10 @@ class Matrix<T> {
 
   contains(pos: Position) {
     return contains(this.matrix, pos)
+  }
+
+  adjacent(pos: IPosition) {
+    return adjacent(this.matrix, pos)
   }
 }
 

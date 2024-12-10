@@ -42,8 +42,8 @@ const part2 = (rawInput: string) => {
   const input = rawInput.split(delimiter)
 
   let res: string[] = []
-  let files = []
-  let spaces = []
+  let files: string[][] = []
+  let spaces: string[][] = []
   let id = 0
   for (let i = 0; i < input.length; i += 2) {
     const fileSize = Number(input[i])
