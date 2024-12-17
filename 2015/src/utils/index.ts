@@ -41,21 +41,6 @@ export class BetterSet<
     return this._set.size
   }
   public values() {
-    return [...this._set.values()]
-  }
-}
-
-export const memo = <T extends unknown[], R>(fn: (...args: T) => R) => {
-  const cache = new Map<string, R>()
-  return (...args: T) => {
-    const key = args.map((arg) => `${arg}_${typeof arg}`).join("|")
-    const cachedValue = cache.get(key)
-    if (cachedValue) {
-      return cachedValue
-    }
-
-    const result = fn(...args)
-    cache.set(key, result)
-    return result
+    return Array.from(this._set.values())
   }
 }

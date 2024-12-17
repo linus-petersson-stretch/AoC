@@ -1,11 +1,11 @@
 <!-- Entries between SOLUTIONS and RESULTS tags are auto-generated -->
 
-[![AoC](https://badgen.net/badge/AoC/2024/blue)](https://adventofcode.com/2024)
+[![AoC](https://badgen.net/badge/AoC/2015/blue)](https://adventofcode.com/2015)
 [![Node](https://badgen.net/badge/Node/v16.13.0+/blue)](https://nodejs.org/en/download/)
 ![Language](https://badgen.net/badge/Language/TypeScript/blue)
 [![Template](https://badgen.net/badge/Template/aocrunner/blue)](https://github.com/caderek/aocrunner)
 
-# 🎄 Advent of Code 2024 🎄
+# 🎄 Advent of Code 2015 🎄
 
 ## Solutions
 
@@ -15,16 +15,16 @@
 [![Day](https://badgen.net/badge/02/%E2%98%85%E2%98%85/green)](src/day02)
 [![Day](https://badgen.net/badge/03/%E2%98%85%E2%98%85/green)](src/day03)
 [![Day](https://badgen.net/badge/04/%E2%98%85%E2%98%85/green)](src/day04)
-[![Day](https://badgen.net/badge/05/%E2%98%85%E2%98%85/green)](src/day05)
-[![Day](https://badgen.net/badge/06/%E2%98%85%E2%98%85/green)](src/day06)
-[![Day](https://badgen.net/badge/07/%E2%98%85%E2%98%85/green)](src/day07)
-[![Day](https://badgen.net/badge/08/%E2%98%85%E2%98%85/green)](src/day08)
-[![Day](https://badgen.net/badge/09/%E2%98%85%E2%98%85/green)](src/day09)
-[![Day](https://badgen.net/badge/10/%E2%98%85%E2%98%85/green)](src/day10)
-[![Day](https://badgen.net/badge/11/%E2%98%85%E2%98%85/green)](src/day11)
-[![Day](https://badgen.net/badge/12/%E2%98%85%E2%98%85/green)](src/day12)
-[![Day](https://badgen.net/badge/13/%E2%98%85%E2%98%85/green)](src/day13)
-[![Day](https://badgen.net/badge/14/%E2%98%85%E2%98%85/green)](src/day14)
+![Day](https://badgen.net/badge/05/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/06/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/07/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/08/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/09/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/10/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/11/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/12/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/13/%E2%98%86%E2%98%86/gray)
+![Day](https://badgen.net/badge/14/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/15/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/16/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/17/%E2%98%86%E2%98%86/gray)
@@ -69,100 +69,100 @@ npm start 1
 
 ```
 Day 01
-Time part 1: 1.51ms
-Time part 2: 6.239ms
-Both parts: 7.749ms
+Time part 1: 0.49ms
+Time part 2: 0.209ms
+Both parts: 0.7ms
 ```
 
 ```
 Day 02
-Time part 1: 1.369ms
-Time part 2: 2.736ms
-Both parts: 4.104ms
+Time part 1: 1.639ms
+Time part 2: 0.871ms
+Both parts: 2.51ms
 ```
 
 ```
 Day 03
-Time part 1: 0.753ms
-Time part 2: 0.192ms
-Both parts: 0.946ms
+Time part 1: 6.227ms
+Time part 2: 3.654ms
+Both parts: 9.881ms
 ```
 
 ```
 Day 04
-Time part 1: 8.436ms
-Time part 2: 2.903ms
-Both parts: 11.339ms
+Time part 1: 603.408ms
+Time part 2: 22405.19ms
+Both parts: 23008.598ms
 ```
 
 ```
 Day 05
-Time part 1: 9.731ms
-Time part 2: 29.602ms
-Both parts: 39.333ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 06
-Time part 1: 8.254ms
-Time part 2: 7203.432ms
-Both parts: 7211.686ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 07
-Time part 1: 167.452ms
-Time part 2: 10420.442ms
-Both parts: 10587.895ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 08
-Time part 1: 1.118ms
-Time part 2: 3.29ms
-Both parts: 4.408ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 09
-Time part 1: 1776.873ms
-Time part 2: 657.306ms
-Both parts: 2434.178ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 10
-Time part 1: 11.295ms
-Time part 2: 6.31ms
-Both parts: 17.606ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 11
-Time part 1: 48.147ms
-Time part 2: 159.789ms
-Both parts: 207.935ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 12
-Time part 1: 107.771ms
-Time part 2: 110.041ms
-Both parts: 217.812ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 13
-Time part 1: 12.22ms
-Time part 2: 69.304ms
-Both parts: 81.524ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
 Day 14
-Time part 1: 2.461ms
-Time part 2: 6171.254ms
-Both parts: 6173.715ms
+Time part 1: -
+Time part 2: -
+Both parts: -
 ```
 
 ```
@@ -243,8 +243,8 @@ Both parts: -
 ```
 
 ```
-Total stars: 28/50
-Total time: 27000.229ms
+Total stars: 8/50
+Total time: 23021.688ms
 ```
 
 <!--/RESULTS-->

@@ -1,15 +1,13 @@
 {
-  "name": "aoc2024",
+  "name": "aoc2015",
   "version": "1.0.0",
-  "description": "Advent of Code 2024 - solutions",
+  "description": "Advent of Code 2015 - solutions",
   "type": "module",
   "scripts": {
     "start": "aocrunner day",
     "build": "aocrunner build",
     "format": "prettier -w src",
-    "update:readme": "aocrunner update:readme",
-    "test": "vitest",
-    "test:ui": "vitest --ui"
+    "update:readme": "aocrunner update:readme"
   },
   "keywords": [
     "aoc"
@@ -17,12 +15,11 @@
   "author": "Linus Petersson",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "@vitest/ui": "^2.1.8",
+    "@types/node": "^16.11.6",
     "aocrunner": "^1.10.0",
-    "prettier": "^2.8.0",
-    "vitest": "^2.1.8"
+    "prettier": "^2.8.0"
   },
+  "dependencies": {},
   "engines": {
     "node": ">=16.13.0"
   }

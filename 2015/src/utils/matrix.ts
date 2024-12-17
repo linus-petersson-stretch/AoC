@@ -20,42 +20,6 @@ export const parseCharMatrix = (rawInput: string, separator: string = " ") => {
   return rawInput.split("\n").map((line) => line.split(separator))
 }
 
-export const rows = <T>(matrix: T[][]) => {
-  return matrix
-}
-
-export const columns = <T>(matrix: T[][]) => {
-  return matrix[0].map((_, i) => column(matrix, i))
-}
-
-export const diagonals = <T>(matrix: T[][]) => {
-  const diags: T[][] = []
-  const height = matrix.length
-  const width = matrix[0].length
-  for (let i = 0; i < height + width - 1; i++) {
-    const diag: T[] = []
-    for (let j = 0; j < height; j++) {
-      const x = i - j
-      if (x >= 0 && x < width) {
-        diag.push(matrix[j][x])
-      }
-    }
-    diags.push(diag)
-  }
-
-  for (let i = 0; i < height + width - 1; i++) {
-    const diag: T[] = []
-    for (let j = 0; j < height; j++) {
-      const x = i - (height - j) + 1
-      if (x >= 0 && x < width) {
-        diag.push(matrix[j][x])
-      }
-    }
-    diags.push(diag)
-  }
-  return diags
-}
-
 export const column = <T>(matrix: T[][], col: number) => {
   return matrix.map((row) => row[col])
 }
@@ -98,44 +62,26 @@ export const findInColumn = <T>(matrix: T[][], column: number, value: T) => {
   }
 }
 
-export const findBy = <T>(
-  matrix: T[][],
-  predicate: (value: T) => boolean | T,
-) => {
+export const findBy = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
-      if (predicate(matrix[y][x]) || predicate === matrix[y][x]) {
+      if (predicate(matrix[y][x])) {
         return new Position(x, y)
       }
     }
   }
 }
-export function findAll<T>(matrix: T[][], value: T): Position[]
-export function findAll<T>(
-  matrix: T[][],
-  predicate: (value: T) => boolean,
-): Position[] {
+
+export const findAll = <T>(matrix: T[][], predicate: (value: T) => boolean) => {
   const results = []
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
-      if (
-        predicate === matrix[y][x] ||
-        (typeof predicate === "function" && predicate(matrix[y][x]))
-      ) {
+      if (predicate(matrix[y][x])) {
         results.push(new Position(x, y))
       }
     }
   }
   return results
-}
-
-export const adjacent = (matrix: any[][], pos: IPosition) => {
-  return [
-    move(pos, Direction.North),
-    move(pos, Direction.South),
-    move(pos, Direction.East),
-    move(pos, Direction.West),
-  ].filter((p) => contains(matrix, p))
 }
 
 export const contains = <T>(matrix: T[][], pos: Position) => {
@@ -174,18 +120,6 @@ class Matrix<T> {
     this.matrix = matrix
   }
 
-  rows() {
-    return rows(this.matrix)
-  }
-
-  columns() {
-    return columns(this.matrix)
-  }
-
-  diagonals() {
-    return diagonals(this.matrix)
-  }
-
   column(col: number) {
     return column(this.matrix, col)
   }
@@ -218,7 +152,7 @@ class Matrix<T> {
     return findBy(this.matrix, predicate)
   }
 
-  findAll(predicate: T | ((value: T) => boolean)) {
+  findAll(predicate: (value: T) => boolean) {
     return findAll(this.matrix, predicate)
   }
 
@@ -228,17 +162,6 @@ class Matrix<T> {
 
   contains(pos: Position) {
     return contains(this.matrix, pos)
-  }
-
-  adjacent(pos: IPosition) {
-    return adjacent(this.matrix, pos)
-  }
-
-  static fillNew<T>(height: number, width: number, value: T) {
-    const newMatrix = Array.from({ length: height }, () =>
-      Array.from({ length: width }, () => value),
-    )
-    return new Matrix(newMatrix)
   }
 }
 
